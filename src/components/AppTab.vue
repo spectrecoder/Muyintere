@@ -1,0 +1,50 @@
+<template>
+  <div class="pt-6 bg-black">
+    <v-card class="tab-item">
+      <v-tabs v-model="tab" class="tab_bar">
+        <v-tab value="one">Item One</v-tab>
+        <v-tab value="two">Item Two</v-tab>
+
+      </v-tabs>
+
+      <div class="mt-7">
+        <span>Listas de reprodução</span>
+      </div>
+      <div class="mt-4">
+        <AppSlide />
+      </div>
+
+      <v-card-text>
+        <v-tabs-window v-model="tab">
+          <v-tabs-window-item value="one"> 
+            
+            <AppVideos/>
+          </v-tabs-window-item>
+
+          <v-tabs-window-item value="two"> Two </v-tabs-window-item>
+        </v-tabs-window>
+      </v-card-text>
+    </v-card>
+  </div>
+</template>
+<script>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import AppSlide from "./AppSlide.vue";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import AppVideos from "./AppVideos.vue";
+
+export default {
+  data: () => ({
+    tab: null,
+  }),
+};
+</script>
+
+<style lang="css">
+.tab_bar {
+  background-color: rgb(33, 33, 33);
+}
+.tab-item {
+  background-color: black;
+}
+</style>
