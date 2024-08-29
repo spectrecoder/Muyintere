@@ -28,7 +28,6 @@
   <script setup>
   import { ref } from 'vue';
   
-  // Define an array of objects representing your items
   const items = ref([
     {
       video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',

@@ -40,11 +40,11 @@ const props = defineProps({
     required: true,
   },
   followers: {
-    type: String, // String to allow for 'K' or 'M' suffixes
+    type: String, 
     required: true,
   },
   likes: {
-    type: String, // String to allow for 'K' or 'M' suffixes
+    type: String, 
     required: true,
   },
 });

@@ -1,7 +1,6 @@
 <template>
   <div class="px-5 bg-black">
     <div class="d-flex align-start">
-      <!-- Profile Image -->
       <div class="profile-img-wrapper me-4">
         <v-img
           class="profile-img"
@@ -58,8 +57,8 @@ import AppButton from "./AppButton.vue";
 }
 .profile-img {
   object-fit: cover;
-  width: 100%; /* Make sure the image fills the container */
-  height: 100%; /* Make sure the image fills the container */
+  width: 100%; 
+  height: 100%; 
 }
 
 .username-text {
