@@ -50,7 +50,7 @@ const items = ref([
     title: "One meets his destiny on the road he takes to avoid it",
     avatar: "@/assets/avatar (1).png",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    content: "0 to 1 with Stellar & Soroban",
+    content: "0 to 1 with work",
   },
   {
     title: "Title 2",
