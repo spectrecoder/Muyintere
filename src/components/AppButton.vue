@@ -1,6 +1,9 @@
 <template>
   <div class="mt-4">
-    <v-btn :style="{ backgroundColor: btnColor, paddingInline: btn_p }" class="btn-size">
+    <v-btn
+      :style="{ backgroundColor: btnColor, paddingInline: btn_p }"
+      class="btn-size"
+    >
       {{ btnName }}
     </v-btn>
   </div>
@@ -20,10 +23,10 @@ const props = defineProps({
     type: String,
     default: "24px",
   },
-  
+
   btnColor: {
     type: String,
-    default: "rgb(33,33,33)", 
+    default: "rgb(33,33,33)",
   },
 });
 </script>
@@ -33,5 +36,4 @@ const props = defineProps({
   width: auto;
   height: 41px;
 }
-
 </style>

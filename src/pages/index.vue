@@ -11,7 +11,7 @@ import AppTab from "@/components/AppTab.vue";
 </script>
 <style lang="css">
 .app-style {
-  max-width: 960px;
+  max-width: 1080px;
   margin: auto;
 }
 

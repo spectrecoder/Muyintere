@@ -23,14 +23,16 @@
         </div>
         <SocialInfo :following="14" followers="297.1K" likes="321.9K" />
         <div class="d-flex ga-2">
-          <AppButton btnName="Seguir" btnColor="#EC3754" />
-          <AppButton btnName="Mensaje " />
-          <AppButton btnName="Seguir" btn_p="10px" />
-          <AppButton btnName="..." btn_p="10px" />
+          <AppButton
+            v-for="(button, index) in buttons"
+            :key="index"
+            :btnName="button.name"
+            :btnColor="button.color"
+            :btn_p="button.padding"
+          />
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 <script setup>
@@ -39,6 +41,13 @@ import { VIcon, VImg } from "vuetify/components";
 import SocialInfo from "@/components/SocialInfo.vue";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AppButton from "./AppButton.vue";
+
+const buttons = [
+  { name: "Seguir", color: "#EC3754" },
+  { name: "Mensaje" },
+  { name: "Seguir", padding: "10px" },
+  { name: "...", padding: "10px" },
+];
 </script>
 
 <style scoped>
@@ -57,8 +66,8 @@ import AppButton from "./AppButton.vue";
 }
 .profile-img {
   object-fit: cover;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
 }
 
 .username-text {

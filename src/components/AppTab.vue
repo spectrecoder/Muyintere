@@ -2,8 +2,8 @@
   <div class="pt-6 bg-black">
     <v-card class="tab-item">
       <v-tabs v-model="tab" class="tab_bar">
-        <v-tab value="one">Item One</v-tab>
-        <v-tab value="two">Item Two</v-tab>
+        <v-tab value="one">Entries</v-tab>
+        <v-tab value="two">Posts</v-tab>
 
       </v-tabs>
 
