@@ -21,7 +21,9 @@
             <AppVideos/>
           </v-tabs-window-item>
 
-          <v-tabs-window-item value="two"> Two </v-tabs-window-item>
+          <v-tabs-window-item value="two">
+            <AppPost />
+          </v-tabs-window-item>
         </v-tabs-window>
       </v-card-text>
     </v-card>
@@ -32,6 +34,8 @@
 import AppSlide from "./AppSlide.vue";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AppVideos from "./AppVideos.vue";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import AppPost from "./AppPost.vue";
 
 export default {
   data: () => ({

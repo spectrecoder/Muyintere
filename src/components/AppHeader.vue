@@ -29,23 +29,23 @@
             :btnName="button.name"
             :btnColor="button.color"
             :btn_p="button.padding"
+            :icon="button.icon"
           />
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script setup>
 import { VIcon, VImg } from "vuetify/components";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import SocialInfo from "@/components/SocialInfo.vue";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AppButton from "./AppButton.vue";
 
 const buttons = [
   { name: "Seguir", color: "#EC3754" },
   { name: "Mensaje" },
-  { name: "Seguir", padding: "10px" },
+  { icon: ['fas', 'share'], padding: "10px" }, // Use an icon array instead of JSX
   { name: "...", padding: "10px" },
 ];
 </script>

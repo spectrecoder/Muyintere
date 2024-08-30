@@ -6,10 +6,10 @@
           :key="index"
           cols="12"
           md="6"
-          lg="4"
+          lg="3"
         >
-          <v-card>
-            <v-responsive aspect-ratio="16/9">
+          <v-card class="h-72">
+            <v-responsive aspect-ratio="16/9" class="h-56">
               <iframe
                 :src="item.video"
                 frameborder="0"
@@ -17,7 +17,6 @@
                 class="video"
               ></iframe>
             </v-responsive>
-            <v-card-title>{{ item.title }}</v-card-title>
             <v-card-text>{{ item.content }}</v-card-text>
           </v-card>
         </v-col>

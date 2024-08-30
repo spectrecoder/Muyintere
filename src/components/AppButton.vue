@@ -4,7 +4,13 @@
       :style="{ backgroundColor: btnColor, paddingInline: btn_p }"
       class="btn-size"
     >
-      {{ btnName }}
+      <!-- If icon prop is provided, render the icon, otherwise render the button name -->
+      <span v-if="icon">
+        <font-awesome-icon :icon="icon" />
+      </span>
+      <span v-else>
+        {{ btnName }}
+      </span>
     </v-btn>
   </div>
 </template>
@@ -12,8 +18,7 @@
 <script setup>
 import { defineProps } from "vue";
 
-// Define props for the button name and color
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// Define props for the button name, color, padding, and optional icon
 const props = defineProps({
   btnName: {
     type: String,
@@ -23,17 +28,23 @@ const props = defineProps({
     type: String,
     default: "24px",
   },
-
   btnColor: {
     type: String,
     default: "rgb(33,33,33)",
   },
+  icon: {
+    type: [String, Array], // Allow either a string or an array (for FontAwesome icons)
+    default: null,
+  },
 });
 </script>
 
-<style lang="css">
+<style scoped>
 .btn-size {
   width: auto;
   height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
