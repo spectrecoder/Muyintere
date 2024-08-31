@@ -82,7 +82,7 @@ const items = ref([
     title:
       "One meets his destiny on the road he takes to avoid it destiny on the road he takes to avoid it destiny on the road he takes to avoid it destiny on the road he takes to avoid it",
     avatar: avatarImage,
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "0 to 1 with work",
     checkStatus: true,
     blockStatus: true,
@@ -90,7 +90,7 @@ const items = ref([
   {
     title: "Title 2",
     avatar: avatarImage1,
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "Content for slide 2",
     checkStatus: true,
     blockStatus: false,
@@ -98,7 +98,7 @@ const items = ref([
   {
     avatar: avatarImage2,
     title: "Title 3",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "Content for slide 3",
     checkStatus: true,
     blockStatus: false,
@@ -107,7 +107,7 @@ const items = ref([
     title:
       "One meets his destiny on the road he takes to avoid it destiny on the road he takes to avoid it destiny on the road he takes to avoid it destiny on the road he takes to avoid it",
     avatar: avatarImage3,
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "0 to 1 with work",
     checkStatus: true,
     blockStatus: false,
@@ -115,7 +115,7 @@ const items = ref([
   {
     title: "Title 2",
     avatar: avatarImage4,
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "Content for slide 2",
     checkStatus: false,
     blockStatus: false,
@@ -123,7 +123,7 @@ const items = ref([
   {
     avatar: avatarImage,
     title: "Title 3",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    video: "https://www.youtube.com/@CryptoSincero",
     content: "Content for slide 3",
     checkStatus: false,
     blockStatus: true,
