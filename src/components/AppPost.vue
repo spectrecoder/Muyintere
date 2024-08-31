@@ -14,23 +14,20 @@
               height="100"
               :src="card.image"
             >
-              <v-card-title class="py-2 px-4">
+              <p class="py-2 px-4 h-16 font-semibold text-xl">
                 {{ card.title }}
-              </v-card-title>
-            </v-img>
-  
-            <v-card-subtitle class="px-4 pt-3">
-              PayPal USD
-            </v-card-subtitle>
+              </p>
+            </v-img>  
+            
   
             <v-card-text class="px-4 pb-3 text-container">
               <div class="d-flex align-center">
-                <v-icon left class="mr-2">mdi-currency-usd</v-icon>
-                <span>PYUSD</span>
+                
+                <span class="w-auto py-1 px-2 bg-gray-300 rounded-xl"><span class="bg-blue rounded-full w-10 px-2"><font-awesome-icon icon="fa-solid fa-p" /></span> PYUSD</span>
                 <v-spacer></v-spacer>
                 <span>{{ card.date }}</span>
               </div>
-              <p class="mt-2 text-content" :class="{ 'blurred': card.isOverflowing }">
+              <p class="mt-2 text-content h-20" :class="{ 'blurred': card.isOverflowing }">
                 {{ card.text }}
               </p>
             </v-card-text>
@@ -145,7 +142,7 @@
   
   <style scoped>
   .text-container {
-    max-height: 100px;
+    max-height: 120px;
     overflow: hidden;
     position: relative;
   }

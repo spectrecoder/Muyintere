@@ -11,8 +11,14 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 class="w-full h-[180px] cursor-pointer"
-                :style="{ filter: item.blockStatus ? 'blur(6px) disabled' : 'none' }"
+                :style="{ filter: item.blockStatus ? 'blur(6px)' : 'none' }"
               ></iframe>
+
+              <!-- Overlay to disable iframe interaction -->
+              <div
+                v-if="item.blockStatus"
+                class="absolute inset-0 bg-transparent cursor-not-allowed"
+              ></div>
 
               <!-- Blocked Label -->
               <div
@@ -31,7 +37,7 @@
               alt="avatar"
               width="45"
               height="45"
-              class="rounded-full"
+              class="rounded-full ml-1"
             />
             <p class="title-multiline-ellipsis w-4/5 px-1 font-medium">
               {{ item.title }}
@@ -41,7 +47,7 @@
             </div>
           </div>
 
-          <p class="text-center">
+          <p class="ml-14">
             {{ item.content }}
             <span v-if="item.checkStatus">
               <font-awesome-icon :icon="['fas', 'circle-check']" />
@@ -55,16 +61,12 @@
 
 <script setup>
 import { ref } from "vue";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import avatarImage from '@/assets/avatar (1).png';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import avatarImage1 from '@/assets/avatar (2).png';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import avatarImage2 from '@/assets/avatar (3).png';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import avatarImage3 from '@/assets/avatar (4).png';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import avatarImage4 from '@/assets/avatar (5).png';
+
 // Slide model
 const model = ref(null);
 
