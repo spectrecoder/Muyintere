@@ -1,13 +1,12 @@
 <template>
   <div class="px-5 bg-black">
-    <div class="d-flex align-start">
-      <div class="profile-img-wrapper me-4">
+    <div class="flex align-start">
+      <div class="profile-img-wrapper me-4 w-[210px] h-[210px]" >
         <v-img
           class="profile-img"
           src="@/assets/logo1.png"
           alt="Profile"
-          width="210"
-          height="210"
+          width="100%"
         />
       </div>
 

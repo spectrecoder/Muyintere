@@ -8,22 +8,25 @@
         sm="6"
         md="4"
       >
-        <v-card class="mx-auto">
-          <v-img class="white--text align-end" height="100" :src="card.image">
-            <p class="py-2 px-4 h-16 font-semibold text-xl">
-              {{ card.title }}
-            </p>
+        <v-card class="mx-auto rounded-lg sm:h-[420px] custom-sm:h-[390px] h-[450px] card-responsive">
+          <v-img
+            class="text-white h-auto w-full"
+            height="150"
+            :src="card.image"
+          >
           </v-img>
-
-          <v-card-text class="px-4 pb-3 text-container">
+          <p class="py-1 px-4 h-auto font-semibold text-lg">
+            {{ card.title }}
+          </p>
+          <v-card-text class="px-4 pb-2 pt-0 text-container">
             <div class="d-flex align-center gap-3">
               <span
                 class="w-auto py-1 px-2 bg-gray-500 rounded-xl flex items-center gap-1"
                 ><span class="bg-blue rounded-full w-auto py-1 px-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="15px"
-                    height="15px"
+                    width="12px"
+                    height="12px"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -49,28 +52,24 @@
             </p>
           </v-card-text>
 
-          <v-card-actions
-            class="px-4 pb-4 d-flex justify-space-between align-center"
-          >
-            <div class="d-flex avatar-container" @click="toggleAvatar(card)">
-              <v-avatar
-                v-for="(avatar, avatarIndex) in card.visibleAvatars"
-                :key="avatarIndex"
-                size="24"
-                color="primary"
-                class="overlapping-avatar"
-              >
-                <v-icon size="16">mdi-account</v-icon>
-              </v-avatar>
+          <v-card-actions class="px-4 pb-4 absolute bottom-3 w-full">
+            <div class="flex justify-between align-center w-full">
+              <div class="d-flex avatar-container" @click="toggleAvatar(card)">
+                <v-avatar
+                  v-for="(avatar, avatarIndex) in card.visibleAvatars"
+                  :key="avatarIndex"
+                  size="24"
+                  color="primary"
+                  class="overlapping-avatar"
+                >
+                  <v-icon size="16">mdi-account</v-icon>
+                </v-avatar>
+              </div>
+
+              <v-btn class="ml-auto w-auto px-2 py-1 rounded-md" color="blue">
+                Mint
+              </v-btn>
             </div>
-
-            <v-btn
-  class="ml-auto w-auto px-2 py-1 rounded-md"
-  color="blue"
->
-  Mint
-</v-btn>
-
           </v-card-actions>
         </v-card>
       </v-col>
@@ -80,7 +79,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { VIcon, VImg } from "vuetify/components";
 import { defineComponent } from "vue";
+import postImage from "@/assets/image1.png";
 
 defineComponent({
   name: "TokenPyusd",
@@ -90,7 +91,7 @@ const initialAvatars = [{ id: 1, name: "User 1" }];
 const cards = ref([
   {
     title: "Global PYUSD Portal Hackathon 2024",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "July 31",
     text: "Announcing the first Global PYUSD Portal Hackathon with Solana — and 40,000 PYUSD in prizes. Announcing the first Global PYUSD Portal Hackathon with Solana — and 40,000 PYUSD in prizes.",
     avatarCount: 1,
@@ -100,7 +101,7 @@ const cards = ref([
   },
   {
     title: "PYUSD Launches on Solana: The Next Phase of Adoption",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "May 29",
     text: "PayPal announced that the PYUSD stablecoin is going live on the Solana blockchain. Here's what it means for the adoption of PYUSD.",
     avatarCount: 3,
@@ -110,7 +111,7 @@ const cards = ref([
   },
   {
     title: "The Secret Life of Your $5 Latte",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "May 21",
     text: "The transactions set off by our everyday purchases are global and complex. There is another way to streamline our payments with crypto.",
     avatarCount: 6,
@@ -120,9 +121,9 @@ const cards = ref([
   },
   {
     title: "Money Without Borders: Crypto & P2P Cross-border Payments",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "April 30",
-    text: "Peer-to-peer cross-border payments are flawed. Crypto and PYUSD offers an alternative solution to growing financial interconnectedness.",
+    text: "Peer-to-peer cross-border payments are flawed. Peer-to-peer cross-border payments are flawed. Crypto and PYUSD offers an alternative solution to growing financial interconnectedness.  Crypto and PYUSD offers an alternative solution to growing financial interconnectedness.",
     avatarCount: 3,
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 3),
@@ -131,9 +132,9 @@ const cards = ref([
   {
     title:
       "Bitcoin, Green Mining, and the Possibility for a More Sustainable Future",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "April 22",
-    text: "An opportunity to accelerate the clean energy transition for Bitcoin mining, from PayPal Blockchain Research Group with Energy Web.",
+    text: "An opportunity to accelerate the clean energy transition for Bitcoin mining, from PayPal Blockchain Research Group with Energy Web. from PayPal Blockchain Research Group with Energy Web.",
     avatarCount: 24,
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 3),
@@ -141,9 +142,9 @@ const cards = ref([
   },
   {
     title: "A Note on the Celsius Distribution",
-    image: "https://cdn.vuetifyjs.com/images/cards/solana.jpg",
+    image: postImage,
     date: "February 08",
-    text: "To everyone who has received the distribution of their Celsius refund: welcome to PayPal and Venmo!",
+    text: "To everyone who has received the distribution of their Celsius refund: welcome to PayPal and Venmo! To everyone who has received the distribution of their Celsius refund: welcome to PayPal and Venmo!",
     avatarCount: 5,
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 5),
@@ -170,25 +171,32 @@ function toggleAvatar(card) {
 
 .text-content {
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-line-clamp: 4; 
   -webkit-box-orient: vertical;
   overflow: hidden;
-  position: relative; /* Necessary for the pseudo-element */
+  position: relative; 
 }
-
+@media (max-width: 600px) {
+  .text-content {
+    -webkit-line-clamp: 6; 
+  }
+  .card-responsive {
+    width: 400px;
+  }
+}
 .blurred::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 1.5em; /* Adjust height based on line height */
+  height: 1.5em; 
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),
     rgba(0, 0, 0, 0.1)
-  ); /* Gradient fade */
-  backdrop-filter: blur(3px); /* Adjust blur intensity */
+  ); 
+  backdrop-filter: blur(3px); 
 }
 
 .avatar-container {
