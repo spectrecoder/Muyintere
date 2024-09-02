@@ -1,25 +1,21 @@
 <template>
-  <div class="text-stats d-flex mt-4">
-    <!-- Siguiendo -->
+  <div class="text-stats d-flex mt-4 flex-wrap">
     <div class="d-flex align-center">
       <span class="number-text">{{ following }}</span>
       <span class="label-text">Siguiendo</span>
     </div>
 
-    <!-- Seguidores -->
     <div class="d-flex align-center">
       <span class="number-text">{{ followers }}</span>
       <span class="label-text">Seguidores</span>
     </div>
 
-    <!-- Me gusta -->
     <div class="d-flex align-center">
       <span class="number-text">{{ likes }}</span>
       <span class="label-text">Me gusta</span>
     </div>
   </div>
 
-  <!-- Description -->
   <div class="mt-4">
     <span class="description-text">Cuenta oficial de Muy Interesante</span>
   </div>

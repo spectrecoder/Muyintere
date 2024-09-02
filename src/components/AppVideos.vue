@@ -14,7 +14,7 @@
                 :src="item.video"
                 frameborder="0"
                 allowfullscreen
-                class="video"
+                class="w-full h-full"
               ></iframe>
             </v-responsive>
             <v-card-text>{{ item.content }}</v-card-text>
@@ -34,7 +34,7 @@
       content: 'This is the content for the first video.',
     },
     {
-      video: 'https://youtu.be/M5q5ydk4Nlk',
+      video: 'https://www.youtube.com/@PrizemArtNft',
       title: 'Video Title 2',
       content: 'This is the content for the second video.',
     },
@@ -80,9 +80,6 @@
   </script>
   
   <style scoped>
-  .video {
-    width: 100%;
-    height: 100%;
-  }
+  
   </style>
   

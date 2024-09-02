@@ -2,7 +2,8 @@
   <div class="mt-4">
     <v-btn
       :style="{ backgroundColor: btnColor, paddingInline: btn_p }"
-      class="btn-size"
+      class="btn-size !min-w-6"
+
     >
       <!-- If icon prop is provided, render the icon, otherwise render the button name -->
       <span v-if="icon">

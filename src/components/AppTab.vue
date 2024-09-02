@@ -1,7 +1,7 @@
 <template>
   <div class="pt-6 bg-black">
-    <v-card class="tab-item">
-      <v-tabs v-model="tab" class="tab_bar">
+    <v-card class="bg-black">
+      <v-tabs v-model="tab" class="bg-[#121212]">
         <v-tab value="one">Entries</v-tab>
         <v-tab value="two">Posts</v-tab>
 
@@ -45,10 +45,6 @@ export default {
 </script>
 
 <style lang="css">
-.tab_bar {
-  background-color: rgb(33, 33, 33);
-}
-.tab-item {
-  background-color: black;
-}
+
+
 </style>

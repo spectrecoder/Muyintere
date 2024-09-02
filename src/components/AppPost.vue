@@ -8,68 +8,71 @@
         sm="6"
         md="4"
       >
-        <v-card class="mx-auto rounded-lg sm:h-[420px] custom-sm:h-[390px] h-[450px] card-responsive">
-          <v-img
-            class="text-white h-auto w-full"
-            height="150"
-            :src="card.image"
-          >
-          </v-img>
-          <p class="py-1 px-4 h-auto font-semibold text-lg">
-            {{ card.title }}
-          </p>
-          <v-card-text class="px-4 pb-2 pt-0 text-container">
-            <div class="d-flex align-center gap-3">
-              <span
-                class="w-auto py-1 px-2 bg-gray-500 rounded-xl flex items-center gap-1"
-                ><span class="bg-blue rounded-full w-auto py-1 px-1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12px"
-                    height="12px"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M6.631 2.72A.82.82 0 0 1 7.445 2h7.493a6.135 6.135 0 0 1 5.7 6.733c-.367 4.847-4.187 6.6-6.18 6.6h-2.613L10.73 21.32a.82.82 0 0 1-.813.68H4.971a.84.84 0 0 1-.82-.947L5.385 12H4.158a.83.83 0 0 1-.827-.833c0-.46.367-.834.827-.834h1.453L6.058 7h-1.9a.83.83 0 0 1-.827-.833c0-.46.36-.834.82-.834h2.127zM7.718 7l-.453 3.333h5.953a1.6 1.6 0 0 0 1.653-1.666A1.6 1.6 0 0 0 13.218 7zm-.673 5h6.173a3.27 3.27 0 0 0 3.3-3.333c0-1.867-1.427-3.334-3.3-3.334H7.945l.22-1.666h6.666a4.466 4.466 0 0 1 4.16 4.933c-.286 3.82-3.233 5.067-4.533 5.067h-3.3c-.4 0-.733.286-.813.68l-1.107 5.986h-3.32z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                PYUSD
-              </span>
+        <v-card
+          class="mx-auto"
+          :class="{
+            'rounded-lg': true,
+            'card-responsive': true,
+          }"
+          :height="getCardHeight"
+        >
+          <v-img :src="card.image" height="150" class="white--text"></v-img>
 
-              <span class="w-auto py-1 px-2 bg-gray-500 rounded-xl">{{
-                card.date
-              }}</span>
-            </div>
-            <p
-              class="mt-2 text-content h-20"
-              :class="{ blurred: card.isOverflowing }"
-            >
-              {{ card.text }}
-            </p>
+          <v-card-title class="py-1 px-4">{{ card.title }}</v-card-title>
+
+          <v-card-text class="px-4 pb-2 pt-0">
+            <v-row align="center" no-gutters>
+              <v-col cols="auto">
+                <v-chip color="grey darken-2" text-color="white" pill>
+                  <v-icon left small>mdi-currency-usd</v-icon>
+                  PYUSD
+                </v-chip>
+              </v-col>
+              <v-col cols="auto">
+                <v-chip color="grey darken-2" text-color="white" pill>{{ card.date }}</v-chip>
+              </v-col>
+            </v-row>
+
+            <v-row class="mt-2">
+              <v-col>
+                <p
+                  class="m-0"
+                  :style="{
+                    display: '-webkit-box',
+                    '-webkit-line-clamp': card.isOverflowing ? 6 : 4,
+                    '-webkit-box-orient': 'vertical',
+                    overflow: 'hidden',
+                    position: 'relative',
+                  }"
+                >
+                  {{ card.text }}
+                </p>
+              </v-col>
+            </v-row>
           </v-card-text>
 
-          <v-card-actions class="px-4 pb-4 absolute bottom-3 w-full">
-            <div class="flex justify-between align-center w-full">
-              <div class="d-flex avatar-container" @click="toggleAvatar(card)">
-                <v-avatar
-                  v-for="(avatar, avatarIndex) in card.visibleAvatars"
-                  :key="avatarIndex"
-                  size="24"
-                  color="primary"
-                  class="overlapping-avatar"
-                >
-                  <v-icon size="16">mdi-account</v-icon>
-                </v-avatar>
-              </div>
-
-              <v-btn class="ml-auto w-auto px-2 py-1 rounded-md" color="blue">
-                Mint
-              </v-btn>
-            </div>
+          <v-card-actions class="px-4 pb-4">
+            <v-row align="center" justify="space-between" no-gutters>
+              <v-col cols="auto">
+                <v-avatar-group @click="toggleAvatar(card)">
+                  <v-avatar
+                    v-for="(avatar, avatarIndex) in card.visibleAvatars"
+                    :key="avatarIndex"
+                    size="24"
+                    color="primary"
+                    class="overlapping-avatar"
+                    :style="{ marginLeft: avatarIndex > 0 ? '-8px' : '0' }"
+                  >
+                    <v-icon size="16">mdi-account</v-icon>
+                  </v-avatar>
+                </v-avatar-group>
+              </v-col>
+              <v-col cols="auto">
+                <v-btn color="blue" variant="tonal" rounded class="ml-auto">
+                  Mint
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -80,12 +83,8 @@
 <script setup>
 import { ref } from "vue";
 import { VIcon, VImg } from "vuetify/components";
-import { defineComponent } from "vue";
 import postImage from "@/assets/image1.png";
 
-defineComponent({
-  name: "TokenPyusd",
-});
 const initialAvatars = [{ id: 1, name: "User 1" }];
 
 const cards = ref([
@@ -153,63 +152,16 @@ const cards = ref([
 ]);
 
 function toggleAvatar(card) {
-  if (card.avatarCount < card.avatars.length) {
-    card.avatarCount++;
-  } else {
-    card.avatarCount--;
-  }
+  card.avatarCount = card.avatarCount < card.avatars.length ? card.avatarCount + 1 : card.avatarCount - 1;
   card.visibleAvatars = card.avatars.slice(0, card.avatarCount);
 }
+
+const getCardHeight = () => (window.innerWidth <= 600 ? '390px' : '450px');
 </script>
 
-<style scoped>
-.text-container {
-  max-height: 132px;
-  overflow: hidden;
-  position: relative;
-}
 
-.text-content {
-  display: -webkit-box;
-  -webkit-line-clamp: 4; 
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  position: relative; 
-}
-@media (max-width: 600px) {
-  .text-content {
-    -webkit-line-clamp: 6; 
-  }
-  .card-responsive {
-    width: 400px;
-  }
-}
-.blurred::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1.5em; 
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 0.1)
-  ); 
-  backdrop-filter: blur(3px); 
-}
 
-.avatar-container {
-  display: flex;
-  align-items: center;
-}
 
-.overlapping-avatar {
-  margin-left: -8px;
-  border: 2px solid white;
-}
 
-.overlapping-avatar:first-child {
-  margin-left: 0;
-}
-</style>
+
+
