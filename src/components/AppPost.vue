@@ -8,6 +8,7 @@
         sm="6"
         md="4"
         lg="4"
+        class="!p-2"
       >
         <v-card
           class="mx-auto h-full !flex !flex-col"

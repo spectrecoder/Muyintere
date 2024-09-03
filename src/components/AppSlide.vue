@@ -5,7 +5,7 @@
         ref="swiperRef"
         :modules="modules"
         :slides-per-view="1"
-        :space-between="20"
+        :space-between="3"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
         :breakpoints="responsiveBreakpoints"

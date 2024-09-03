@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <p class="text-xl mb-2">Entries</p>
     <v-row>
       <v-col
         v-for="(item, index) in items"
