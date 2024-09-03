@@ -10,7 +10,7 @@
         lg="3"
         class="!p-2"
       >
-        <v-card class="!bg-black">
+        <v-card class="!bg-black p-0">
           <v-responsive aspect-ratio="16/9" class="h-56 rounded-lg">
             <v-img
               :src="item.video"
