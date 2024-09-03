@@ -41,7 +41,7 @@
 
                 <div
                   v-if="item.blockStatus"
-                  class="absolute inset-0 flex justify-center items-center bg-white w-28 rounded h-10 text-black text-sm font-bold top-28 left-8"
+                  class="absolute inset-0 flex justify-center items-center bg-white w-28 rounded h-10 text-black text-sm font-bold top-28 left-10"
                 >
                   <v-icon color="black" class="mr-2">mdi-lock</v-icon>
                   Bloqueado
