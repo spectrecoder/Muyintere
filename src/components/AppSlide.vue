@@ -4,7 +4,7 @@
       <swiper
         ref="swiperRef"
         :modules="modules"
-        :slides-per-view="1"
+        :slides-per-view="4"
         :space-between="3"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
@@ -217,6 +217,10 @@ const items = ref([
 ]);
 
 const responsiveBreakpoints = {
+  1440:{
+    slidesPerView:4,
+
+  },
   1024: {
     slidesPerView: 3,
   },
