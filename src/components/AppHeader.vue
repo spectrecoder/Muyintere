@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-5" fluid>
+  <v-container class="py-4" fluid>
     <div class="flex sm:flex-nowrap flex-wrap justify-start gap-4">
       <div class="sm:w-48 w-full flex justify-center">
         <v-img

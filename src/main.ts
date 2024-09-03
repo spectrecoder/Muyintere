@@ -9,7 +9,7 @@ import { registerPlugins } from '@/plugins'
 
 // Components
 import App from './App.vue'
-
+import 'floating-vue/dist/style.css';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -31,6 +31,5 @@ const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 registerPlugins(app)
-
 app.mount('#app')
 

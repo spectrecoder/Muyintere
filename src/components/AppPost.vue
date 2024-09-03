@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="p-0 !max-w-full">
     <v-row>
       <v-col
         v-for="(card, index) in cards"
@@ -7,31 +7,32 @@
         cols="12"
         sm="6"
         md="4"
+        lg="4"
       >
         <v-card
-          class="mx-auto"
+          class="mx-auto h-full"
           :class="{
             'rounded-lg': true,
             'card-responsive': true,
           }"
           :height="getCardHeight"
         >
-          <v-img :src="card.image" height="150" class="white--text"></v-img>
+          <v-img :src="card.image" height="150" class="white--text" cover></v-img>
 
           <v-card-title class="py-1 px-4">{{ card.title }}</v-card-title>
 
           <v-card-text class="px-4 pb-2 pt-0">
-            <v-row align="center" no-gutters>
-              <v-col cols="auto">
+            <div class="flex gap-1">
+              <div>
                 <v-chip color="grey darken-2" text-color="white" pill>
                   <v-icon left small>mdi-currency-usd</v-icon>
                   PYUSD
                 </v-chip>
-              </v-col>
-              <v-col cols="auto">
+              </div>
+              <div>
                 <v-chip color="grey darken-2" text-color="white" pill>{{ card.date }}</v-chip>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
 
             <v-row class="mt-2">
               <v-col>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black px-4 app-style fill-height">
+  <div class="bg-black px-2 app-style fill-height">
     <AppHeader />
     <AppTab />
   </div>
