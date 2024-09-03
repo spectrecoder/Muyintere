@@ -67,14 +67,14 @@
                     @mouseleave="showFullText = false"
                   >
                     <p
-                      class="title-multiline-ellipsis w-[90%] px-1 font-medium"
+                      class="title-multiline-ellipsis  px-1 font-medium"
                       v-tooltip="item.title"
                     >
                       {{ item.title }}
                     </p>
                     <p
                       v-if="showFullText"
-                      class="full-text w-[90%] px-1 font-medium"
+                      class="full-text px-1 font-medium"
                     >
                       {{ item.title }}
                     </p>
@@ -141,7 +141,7 @@ const items = ref([
     blockStatus: true,
   },
   {
-    title: "Title 2",
+    title: "Title 2, never say never",
     avatar: avatarImage1,
     video: back2,
     content: "Content for slide 2",
