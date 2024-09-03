@@ -1,51 +1,45 @@
 <template>
   <div class="mt-4">
     <v-btn
-      :style="{ backgroundColor: btnColor, paddingInline: btn_p }"
-      class="btn-size !min-w-6"
-
+      :style="buttonStyles"
+      class="!h-[40px] !min-w-[24px] flex justify-center items-center"
     >
-      <!-- If icon prop is provided, render the icon, otherwise render the button name -->
-      <span v-if="icon">
+      <template v-if="icon">
         <font-awesome-icon :icon="icon" />
-      </span>
-      <span v-else>
+      </template>
+      <template v-else>
         {{ btnName }}
-      </span>
+      </template>
     </v-btn>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, computed } from 'vue';
 
-// Define props for the button name, color, padding, and optional icon
-const props = defineProps({
+const { btnName, btn_p, btnColor, icon } = defineProps({
   btnName: {
     type: String,
     required: true,
   },
   btn_p: {
     type: String,
-    default: "24px",
+    default: '24px',
   },
   btnColor: {
     type: String,
-    default: "rgb(33,33,33)",
+    default: 'rgb(33, 33, 33)',
   },
   icon: {
     type: [String, Array], // Allow either a string or an array (for FontAwesome icons)
     default: null,
   },
 });
+
+const buttonStyles = computed(() => ({
+  backgroundColor: btnColor,
+  paddingInline: btn_p,
+}));
 </script>
 
-<style scoped>
-.btn-size {
-  width: auto;
-  height: 41px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
+

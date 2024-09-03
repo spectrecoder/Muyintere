@@ -16,7 +16,7 @@
           <div cols="auto">
             <span class="font-weight-bold text-h6">muyinteresante_es</span>
           </div>
-          <div class="flex">
+          <div class="flex gap-1 items-center justify-center">
             <div cols="auto !pr-0">
               <v-icon class="" color="blue lighten-2">mdi-check-circle</v-icon>
             </div>
@@ -52,7 +52,6 @@ import { VIcon, VImg } from "vuetify/components";
 import SocialInfo from "@/components/SocialInfo.vue";
 import AppButton from "./AppButton.vue";
 import logoImage from "@/assets/logo1.png";
-import { computed } from "vue";
 
 const buttons = [
   { name: "Seguir", color: "#EC3754" },
@@ -60,13 +59,4 @@ const buttons = [
   { icon: ["fas", "share"], padding: "10px" },
   { name: "...", padding: "10px" },
 ];
-
-// const getColStyle = computed(() => {
-//   const width = window.innerWidth;
-//   if (width >= 960) {
-//     return { width: '9rem' };
-//   } else {
-//     return { width: '12rem' };
-//   }
-// });
 </script>

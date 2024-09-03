@@ -1,5 +1,5 @@
 <template>
-  <v-container class="p-0 !max-w-full">
+  <v-container class="!p-0 !max-w-full">
     <v-row>
       <v-col
         v-for="(card, index) in cards"
@@ -10,14 +10,34 @@
         lg="4"
       >
         <v-card
-          class="mx-auto h-full"
+          class="mx-auto h-full !flex !flex-col"
           :class="{
             'rounded-lg': true,
             'card-responsive': true,
           }"
           :height="getCardHeight"
         >
-          <v-img :src="card.image" height="150" class="white--text" cover></v-img>
+          <div class="relative">
+            <v-img
+              :src="card.image"
+              height="150"
+              class="white--text"
+              cover
+              :style="{ filter: card.blockStatus ? 'blur(6px)' : 'none' }"
+            ></v-img>
+            <div
+              v-if="card.blockStatus"
+              class="absolute inset-0 bg-transparent cursor-not-allowed"
+            ></div>
+
+            <div
+              v-if="card.blockStatus"
+              class="absolute inset-0 flex justify-center items-center bg-white w-28 rounded h-10 text-black text-sm font-bold top-20 left-10"
+            >
+              <v-icon color="black" class="mr-2">mdi-lock</v-icon>
+              Bloqueado
+            </div>
+          </div>
 
           <v-card-title class="py-1 px-4">{{ card.title }}</v-card-title>
 
@@ -30,7 +50,9 @@
                 </v-chip>
               </div>
               <div>
-                <v-chip color="grey darken-2" text-color="white" pill>{{ card.date }}</v-chip>
+                <v-chip color="grey darken-2" text-color="white" pill>{{
+                  card.date
+                }}</v-chip>
               </div>
             </div>
 
@@ -55,7 +77,7 @@
           <v-card-actions class="px-4 pb-4">
             <v-row align="center" justify="space-between" no-gutters>
               <v-col cols="auto">
-                <v-avatar-group @click="toggleAvatar(card)">
+                <v-avatar-group>
                   <v-avatar
                     v-for="(avatar, avatarIndex) in card.visibleAvatars"
                     :key="avatarIndex"
@@ -98,6 +120,7 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 1),
     isOverflowing: false,
+    blockStatus: false,
   },
   {
     title: "PYUSD Launches on Solana: The Next Phase of Adoption",
@@ -108,6 +131,7 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 3),
     isOverflowing: false,
+    blockStatus: true,
   },
   {
     title: "The Secret Life of Your $5 Latte",
@@ -118,6 +142,7 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 6),
     isOverflowing: false,
+    blockStatus: false,
   },
   {
     title: "Money Without Borders: Crypto & P2P Cross-border Payments",
@@ -128,6 +153,7 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 3),
     isOverflowing: false,
+    blockStatus: false,
   },
   {
     title:
@@ -139,6 +165,7 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 3),
     isOverflowing: false,
+    blockStatus: false,
   },
   {
     title: "A Note on the Celsius Distribution",
@@ -149,20 +176,9 @@ const cards = ref([
     avatars: [...initialAvatars],
     visibleAvatars: initialAvatars.slice(0, 5),
     isOverflowing: false,
+    blockStatus: false,
   },
 ]);
 
-function toggleAvatar(card) {
-  card.avatarCount = card.avatarCount < card.avatars.length ? card.avatarCount + 1 : card.avatarCount - 1;
-  card.visibleAvatars = card.avatars.slice(0, card.avatarCount);
-}
-
-const getCardHeight = () => (window.innerWidth <= 600 ? '390px' : '450px');
+const getCardHeight = () => (window.innerWidth <= 600 ? "390px" : "450px");
 </script>
-
-
-
-
-
-
-

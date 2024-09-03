@@ -51,13 +51,15 @@
 
             <div class="flex px-1 justify-start">
               <div>
-                <v-img
-                  :src="item.avatar"
-                  alt="avatar"
-                  width="45"
-                  height="45"
-                  class="rounded-full mx-1"
-                />
+                <a :href="item.link" target="_blank">
+                  <v-img
+                    :src="item.avatar"
+                    alt="avatar"
+                    width="45"
+                    height="45"
+                    class="rounded-full mx-1"
+                  />
+                </a>
               </div>
               <div class="flex justify-between w-full flex-col">
                 <div class="flex justify-between">
@@ -67,15 +69,12 @@
                     @mouseleave="showFullText = false"
                   >
                     <p
-                      class="title-multiline-ellipsis  px-1 font-medium"
+                      class="title-multiline-ellipsis px-1 font-medium"
                       v-tooltip="item.title"
                     >
                       {{ item.title }}
                     </p>
-                    <p
-                      v-if="showFullText"
-                      class="full-text px-1 font-medium"
-                    >
+                    <p v-if="showFullText" class="full-text px-1 font-medium">
                       {{ item.title }}
                     </p>
                   </div>
@@ -139,6 +138,7 @@ const items = ref([
     content: "0 to 1 with work",
     checkStatus: true,
     blockStatus: true,
+    link:""
   },
   {
     title: "Title 2, never say never",
@@ -147,6 +147,7 @@ const items = ref([
     content: "Content for slide 2",
     checkStatus: true,
     blockStatus: false,
+    link:""
   },
   {
     avatar: avatarImage2,
@@ -155,6 +156,7 @@ const items = ref([
     content: "Content for slide 3",
     checkStatus: true,
     blockStatus: false,
+    link:""
   },
   {
     title:
@@ -164,6 +166,7 @@ const items = ref([
     content: "0 to 1 with work",
     checkStatus: true,
     blockStatus: false,
+    link:""
   },
   {
     title: "Title 2",
@@ -172,6 +175,7 @@ const items = ref([
     content: "Content for slide 2",
     checkStatus: false,
     blockStatus: false,
+    link:""
   },
   {
     avatar: avatarImage,
@@ -180,6 +184,7 @@ const items = ref([
     content: "Content for slide 3",
     checkStatus: false,
     blockStatus: true,
+    link:""
   },
   {
     title:
@@ -189,6 +194,7 @@ const items = ref([
     content: "0 to 1 with work",
     checkStatus: true,
     blockStatus: true,
+    link:""
   },
   {
     title: "Title 2",
@@ -197,6 +203,7 @@ const items = ref([
     content: "Content for slide 2",
     checkStatus: true,
     blockStatus: true,
+    link:""
   },
   {
     avatar: avatarImage4,
@@ -205,6 +212,7 @@ const items = ref([
     content: "Content for slide 3",
     checkStatus: true,
     blockStatus: false,
+    link:""
   },
 ]);
 
@@ -219,9 +227,7 @@ const responsiveBreakpoints = {
     slidesPerView: 1,
   },
 };
-import { mergeProps } from "vue";
 
-// Define reactive items array
 const items1 = ref([
   { title: "Add to favourite" },
   { title: "Share" },

@@ -21,7 +21,11 @@
   </div>
 
   <div>
-    <span class="link-color mt-4"><i class="pi pi-link mr-2"></i>mtr.bio/muyinteresante</span>
+    <a :href="contact_link" target="_blank">
+      <span class="link-color mt-4"
+        ><i class="pi pi-link mr-2"></i>mtr.bio/muyinteresante</span
+      ></a
+    >
   </div>
 </template>
 
@@ -29,6 +33,7 @@
 import { defineProps } from "vue";
 import "primeicons/primeicons.css";
 
+const contact_link = "";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
   following: {
@@ -36,11 +41,11 @@ const props = defineProps({
     required: true,
   },
   followers: {
-    type: String, 
+    type: String,
     required: true,
   },
   likes: {
-    type: String, 
+    type: String,
     required: true,
   },
 });
@@ -67,7 +72,6 @@ const props = defineProps({
   font-weight: 400;
   display: flex;
   align-items: center;
-
 }
 .description-text {
   font-size: 16px;

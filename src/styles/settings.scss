@@ -1,13 +1,4 @@
-/**
- * src/styles/settings.scss
- *
- * Configures SASS variables and Vuetify overwrites
- */
 
-// https://vuetifyjs.com/features/sass-variables/`
-// @use 'vuetify/settings' with (
-//   $color-pack: false
-// );
 
 .swiper-button-prev {
     position: absolute !important;
@@ -46,6 +37,13 @@
   }
 
   .v-btn--size-default {
-    min-width: auto !important; 
-    --v-btn-height: 20px !important;
+    min-width: 10px !important; 
+    --v-btn-height: 25px !important;
+  }
+  .v-card-text {
+    padding: 8px !important;
+  }
+  .v-container {
+    padding: 6px !important;
+
   }
